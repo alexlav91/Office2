@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager</title>
+</head>
+<body>
+Name: <p th:text = "${manager.getName()}">VALUE</p>
+Lastname: <p th:text = "${manager.getSurname()}">VALUE</p>
+Age: <p th:text = "${manager.getAge()}">VALUE</p>
+Experience: <p th:text = "${manager.getExperience()}">VALUE</p>
+
+</body>
+</html>
