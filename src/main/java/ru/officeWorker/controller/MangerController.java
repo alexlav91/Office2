@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.officeWorker.dao.DAO;
-import ru.officeWorker.dao.ManagerDao;
 
 @Controller
 @RequestMapping("/managers")

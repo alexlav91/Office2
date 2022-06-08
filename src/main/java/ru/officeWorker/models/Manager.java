@@ -1,19 +1,17 @@
 package ru.officeWorker.models;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-
+import java.util.ArrayList;
 import java.util.List;
 
-public class Manager  {
+public class Manager {
     private int Id;
     private String name;
     private String surname;
     private int age;
     private double experience;
-    private List<Person> subordinates;
+    private List<Person> subordinates = new ArrayList<>();
 
-        public Manager(int id, String name, String surname, int age, double experience, List<Person> subordinates) {
+    public Manager(int id, String name, String surname, int age, double experience, List<Person> subordinates) {
         Id = id;
         this.name = name;
         this.surname = surname;

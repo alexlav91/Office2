@@ -1,6 +1,6 @@
 package ru.officeWorker.models;
+
 import org.springframework.stereotype.Component;
-import ru.officeWorker.dao.ManagerDao;
 
 @Component
 public class Person {
@@ -21,7 +21,7 @@ public class Person {
         this.age = age;
         this.experience = experience;
         this.manager = manager;
-     }
+    }
 
     public Person(int id, String name) {
         this.id = id;
