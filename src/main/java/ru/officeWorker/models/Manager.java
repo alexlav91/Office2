@@ -1,5 +1,8 @@
 package ru.officeWorker.models;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 import java.util.List;
 
 public class Manager  {
@@ -9,6 +12,15 @@ public class Manager  {
     private int age;
     private double experience;
     private List<Person> subordinates;
+
+        public Manager(int id, String name, String surname, int age, double experience, List<Person> subordinates) {
+        Id = id;
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+        this.experience = experience;
+        this.subordinates = subordinates;
+    }
 
     public Manager(int id, String name) {
         Id = id;
@@ -60,6 +72,7 @@ public class Manager  {
     }
 
     public void setExperience(double experience) {
+
         this.experience = experience;
     }
 
@@ -67,7 +80,8 @@ public class Manager  {
         return subordinates;
     }
 
-    public void setSubordinates(Person person) {
-        this.subordinates.add(person);
+    public void setSubordinates(List<Person> subordinates) {
+        this.subordinates = subordinates;
     }
 }
+

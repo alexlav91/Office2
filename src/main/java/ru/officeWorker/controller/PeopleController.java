@@ -3,18 +3,19 @@ package ru.officeWorker.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import ru.officeWorker.dao.DAO;
 import ru.officeWorker.dao.PeopleDao;
+import ru.officeWorker.models.Person;
 
 @Controller
 @RequestMapping("/people")
 public class PeopleController {
 
-    private final PeopleDao peopleDao;
+    private final DAO peopleDao;
     @Autowired
-    public PeopleController(PeopleDao peopleDao) {
+    public PeopleController(DAO peopleDao) {
+
         this.peopleDao = peopleDao;
     }
 
@@ -27,5 +28,16 @@ public class PeopleController {
     public String show(@PathVariable("id") int id,Model model){
         model.addAttribute("person", peopleDao.show(id));
         return "people/show";
+    }
+    @GetMapping("/new")
+    public String newPerson(Model model){
+        model.addAttribute("person", new Person());
+        return "people/newPerson";
+    }
+    @PostMapping()
+    public String create(@ModelAttribute("person")Person person){
+        peopleDao.save(person);
+        return "redirect:/people";
+
     }
 }

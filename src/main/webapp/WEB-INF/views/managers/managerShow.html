@@ -9,6 +9,9 @@ Name: <p th:text = "${manager.getName()}">VALUE</p>
 Lastname: <p th:text = "${manager.getSurname()}">VALUE</p>
 Age: <p th:text = "${manager.getAge()}">VALUE</p>
 Experience: <p th:text = "${manager.getExperience()}">VALUE</p>
+Subordinates: <div th:each  = "subordinate : ${subordinates}">
+    <a th:text = "${subordinate.getName()}">user</a>
+</div>
 
 </body>
 </html>
